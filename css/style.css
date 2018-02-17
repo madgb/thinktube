@@ -71,6 +71,9 @@ body{
 .result-li{
 	background: #fff;
     -webkit-filter: drop-shadow(0.5px 0.5px 4px #545454);
+    -moz-filter: drop-shadow(0.5px 0.5px 4px #545454);
+    -ms-filter: drop-shadow(0.5px 0.5px 4px #545454);
+    -o-filter: drop-shadow(0.5px 0.5px 4px #545454);
     filter: drop-shadow(0.5px 0.5px 4px #545454);
 }
 .description{
@@ -117,6 +120,9 @@ body{
     background: #820505;
     color: #fff;
     -webkit-filter: drop-shadow(1px 1px 2px #000);
+    -moz-filter: drop-shadow(1px 1px 2px #000);
+    -ms-filter: drop-shadow(1px 1px 2px #000);
+    -o-filter: drop-shadow(1px 1px 2px #000);
     filter: drop-shadow(1px 1px 2px #000);
 }
 .click:focus, .click:active{
