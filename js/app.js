@@ -37,13 +37,13 @@ function renderError(error) {
 //make base of HTML strcuture, and put variables in 
 const HTML_base = (
 	`<li class="result-li">
-		<a class="img-link" target:"_blank" href=""> 
+		<a class="img-link" target="_blank" href=""> 
 			<img class="img" src="">
 		</a>
 		<p class="detail"></p>
 		<p>
            Channel: 
-           <a class="channel" target:"_blank" 
+           <a class="channel" target="_blank" 
            	  href=""></a>
         </p>
 	</li>
