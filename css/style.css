@@ -1,3 +1,7 @@
+*{
+	font-family: sans-serif;
+}
+
 ul, li{
 	list-style: none;
 }
@@ -19,6 +23,19 @@ header{
 body{
 	background: #ececec;
 }
+.ellipsis{
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.multi-elips{
+	display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 .header-wrapper{
     width: 50%;
@@ -39,12 +56,24 @@ body{
 	height: 100%;
 	object-fit: cover;
 }
+.description{
+	font-size: 14px;
+}
 .channel-p{
-	margin: 0;
+	width: 95%;
+    margin: 0;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 4px;
+    left: 6px;
     font-size: 13px;
+}
+
+.result-li{
+	background: #fff;
+    filter: drop-shadow(0.5px 0.5px 4px #545454);
+}
+.description{
+	margin: 0 0.5em;
 }
 
 /*input*/
@@ -132,5 +161,8 @@ body{
 	}
 	header {
 	    padding: 1rem 0 3rem;
+	}
+	.grid {
+	    grid-gap: 1.5rem 0.8rem;
 	}
 }

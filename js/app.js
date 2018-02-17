@@ -41,12 +41,14 @@ const HTML_base = (
 		<a class="img-link" target="_blank" href=""> 
 			<img class="img" src="">
 		</a>
-		<p class="detail"></p>
-		<p class="channel-p">
-           Channel: 
-           <a class="channel" target="_blank" 
-           	  href=""></a>
-        </p>
+		<div class="description">
+			<p class="detail multi-elips"></p>
+			<p class="channel-p ellipsis">
+	           Channel: 
+	           <a class="channel" target="_blank" 
+	           	  href=""></a>
+	        </p>
+		</div>
 	</li>
 	`);
 
