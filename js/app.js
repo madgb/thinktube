@@ -13,8 +13,8 @@ function getDataFromApi(searchTerm, pageToken, callback) {
     	part: 'snippet',
     	key: 'AIzaSyAkcjnCcHDCNVjZXC28pvI8ur0GMxoAKTY',
     	type: 'video',
-    	q: `${searchTerm}`,
-    	maxResults: 8
+    	q: searchTerm,
+    	maxResults: 12
     },
     dataType: 'json',
   	type: "GET",
@@ -36,12 +36,13 @@ function renderError(error) {
 
 //make base of HTML strcuture, and put variables in 
 const HTML_base = (
-	`<li class="result-li">
+	`
+	<li class="result-li content">
 		<a class="img-link" target="_blank" href=""> 
 			<img class="img" src="">
 		</a>
 		<p class="detail"></p>
-		<p>
+		<p class="channel-p">
            Channel: 
            <a class="channel" target="_blank" 
            	  href=""></a>
@@ -110,9 +111,13 @@ function displayYouTubeData (data) {
     result.html(results);
 
     //how many results
-    $('.howMany').text(resNum + 'Results Available');
+    $('.howMany').text(resNum + ' Results Available');
 }
 
+//show what user typed
+function youdid(d){
+	$('.youdid').text(d);
+}
 
 //listen-to-user
 
@@ -124,7 +129,7 @@ $('.getForm').submit(function(e){
 	
 	//save what user searched here - hidden input. for next/prev action
 	$('.saveQuery').val(query);
-
+	youdid(query);
 	//clean input
 	queryTarget.val(" ");
 

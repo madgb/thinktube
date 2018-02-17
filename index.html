@@ -6,26 +6,35 @@
     <meta name="description" content="Search YouTube for related content">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Acme|Anton|Roboto|Shadows+Into+Light" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-	<h1>thinkful-tube</h1>
-	<h3>search-section</h3>
-	<form action="#" class="getForm">
-		<input type="text" class="getDat">
-		<button class="click" type="submit">find!</button>
-		<p class="howMany"></p>
-	</form>
-	<h3>result-section</h3>
+	<header>
+		<div class="header-wrapper">
+			<h1>thinkful-tube</h1>
+			<h3>find your video</h3>
+			<form action="#" class="getForm">
+				<div class="parent">
+					<input type="text" class="getDat">
+					<span class="focus-border"></span>
+				</div>
+				<button class="click" type="submit">SEARCH</button>
+				<p class="howMany"></p>
+			</form>
+			<h4>keyword: <span class="youdid"></span> </h4>
+		</div>
+	</header>
+	
 	<div class="result">
-		<ul class="result-ul">
+		<ul class="result-ul grid">
 			
 		</ul>
 		<input class="saveQuery" type="hidden" value="">
     	<div class="morePages" role="group" aria-label="..." >
-			 <a href="#" value="" class="moreBtns prev hidden">Prev page</a>
-			 <a href="#" value="" class="moreBtns next hidden">Next page</a>
+			 <a href="#" value="" class="moreBtns prev hidden">Prev</a>
+			 <a href="#" value="" class="moreBtns next hidden">Next</a>
 	    </div>   
 	</div>
     <script src="js/app.js"></script>
