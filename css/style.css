@@ -70,6 +70,7 @@ body{
 
 .result-li{
 	background: #fff;
+    -webkit-filter: drop-shadow(0.5px 0.5px 4px #545454);
     filter: drop-shadow(0.5px 0.5px 4px #545454);
 }
 .description{
@@ -83,7 +84,7 @@ body{
     display: inline-block;
 }
 .getDat{
-	font: 15px/24px 'Muli', sans-serif; 
+	font: 16px 'Muli', sans-serif; 
 	color: #333; 
 	width: 100%; 
 	box-sizing: 
@@ -115,6 +116,7 @@ body{
 	padding: 9px;
     background: #820505;
     color: #fff;
+    -webkit-filter: drop-shadow(1px 1px 2px #000);
     filter: drop-shadow(1px 1px 2px #000);
 }
 .click:focus, .click:active{
@@ -122,6 +124,7 @@ body{
 }
 .click:active{
 	border: 1px solid black;
+	-webkit-filter: none;
 	filter: none;
 }
 
@@ -156,8 +159,15 @@ body{
 /*media*/
 
 @media (max-width: 768px){
+	h1{
+		font-size: 1.5em;
+	}
+	h3{
+		font-size: 1em;
+	}
 	.header-wrapper{
 		width: 95%;
+		font-size: 14px;
 	}
 	header {
 	    padding: 1rem 0 3rem;
