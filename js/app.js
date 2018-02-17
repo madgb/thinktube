@@ -21,6 +21,8 @@ function getDataFromApi(searchTerm, pageToken, callback) {
     success: callback,
     error: renderError
   };
+
+  //and if pageToken came (when the result goes further than maxResults), replace the token with inherited one
   if(pageToken) {
 		setting.data.pageToken = pageToken;
 	}
@@ -29,7 +31,7 @@ function getDataFromApi(searchTerm, pageToken, callback) {
 
 //error
 function renderError(error) {
-  result.html(`${error} Something went wrong!`)
+  result.html(error+ 'Something went wrong!');
 }
 
 //make base of HTML strcuture, and put variables in 
@@ -49,7 +51,7 @@ const HTML_base = (
 
 //design
 function render(result) {
-	//get frame
+	//get frame from HTML_base. look up. 
 	const structure = $(HTML_base);
 
 	//fill some variables
@@ -65,12 +67,13 @@ function render(result) {
 
 // https://developers.google.com/youtube/v3/docs/search/list?hl=en
 
-// if there are more result than my maxResults = 8 ( line17 ), the "nexPageToken" goes TRUE
+// if there are more result than my maxResults = 8 ( line17 ), the "nextPageToken" goes TRUE
 function setPageTokens(nextPageToken, prevPageToken) {
 	if(nextPageToken) {
 		$('.next').removeClass('hidden');
 		$('.next').on('click', event => {
 			event.preventDefault();
+			//now you see the reason why we saved the searched value for
 			getDataFromApi($('.saveQuery').val(), nextPageToken, displayYouTubeData)		
 	    });
 	} 
@@ -95,12 +98,14 @@ function displayYouTubeData (data) {
 	//take action if there are other pages available
 	let nextPageToken = data.nextPageToken;
 	let prevPageToken = data.prevPageToken;
+
+	//go setPageTokens and look how does the function works
 	setPageTokens(nextPageToken, prevPageToken);
 
 	//let user know how many results have searched
 	const resNum = data.pageInfo.totalResults;
 
-
+	//let's see how "render" function works. go render
 	const results = data.items.map((item, index) => render(item));
     result.html(results);
 
@@ -125,4 +130,6 @@ $('.getForm').submit(function(e){
 
 	//I put null here.
   	getDataFromApi(query, null, displayYouTubeData);
+
+  	//go displayYouTubeData
 });
